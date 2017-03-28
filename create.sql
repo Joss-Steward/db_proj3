@@ -188,6 +188,7 @@ CREATE TABLE Recipes (
 CREATE TABLE CraftingMaterials (
 	recipeID INT NOT NULL,
 	craftingMaterialID INT NOT NULL,
+	quantityNeeded INT NOT NULL,
 	CONSTRAINT PK_Craft_Mats PRIMARY KEY (recipeID, craftingMaterialID),
 	FOREIGN KEY (recipeID) REFERENCES Recipes(recipeID),
 	FOREIGN KEY (craftingMaterialID) REFERENCES Items(itemID)

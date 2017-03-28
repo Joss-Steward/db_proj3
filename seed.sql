@@ -240,11 +240,11 @@ VALUES
     (16, 1);    -- 5
 
 INSERT INTO CraftingMaterials
-    (recipeID, craftingMaterialID)
+    (recipeID, quantityNeeded, craftingMaterialID)
 VALUES
-    (1, 7),
-    (1, 9),
-    (2, 13),
-    (3, 14),
-    (4, 15),
-    (5, 8);
+    (1, 5, 7),
+    (1, 2, 9),
+    (2, 3, 13),
+    (3, 1, 14),
+    (4, 1, 15),
+    (5, 3, 8);
