@@ -2,7 +2,7 @@
 SET FOREIGN_KEY_CHECKS = 0
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
 
 --------------
 SET @tables = NULL
@@ -35,7 +35,7 @@ Statement prepared
 EXECUTE stmt
 --------------
 
-Query OK, 0 rows affected (0.08 sec)
+Query OK, 0 rows affected (0.07 sec)
 
 --------------
 DEALLOCATE PREPARE stmt
@@ -64,7 +64,7 @@ CREATE TABLE Players (
 )
 --------------
 
-Query OK, 0 rows affected (0.06 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE Logins (
@@ -77,7 +77,7 @@ CREATE TABLE Logins (
 )
 --------------
 
-Query OK, 0 rows affected (0.06 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE Maps (
@@ -87,7 +87,7 @@ CREATE TABLE Maps (
 )
 --------------
 
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.00 sec)
 
 --------------
 CREATE TABLE KnownMaps (
@@ -99,7 +99,7 @@ CREATE TABLE KnownMaps (
 )
 --------------
 
-Query OK, 0 rows affected (0.09 sec)
+Query OK, 0 rows affected (0.03 sec)
 
 --------------
 CREATE TABLE StatusEffects (
@@ -126,7 +126,7 @@ CREATE TABLE PlayerStatus (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE Deaths (
@@ -156,13 +156,13 @@ CREATE TABLE Creatures (
 	creatureID INT NOT NULL AUTO_INCREMENT,
 	species VARCHAR(255) NOT NULL,
 	maxHealth INT,
-	Friendliness VARCHAR(255),
-	CONSTRAINT Friend_Val CHECK  (Friendliness = 'aggressive' OR Friendliness = 'neutral' OR Friendliness = 'passive' ),
+	friendliness VARCHAR(255),
+	CONSTRAINT Friend_Val CHECK  (friendliness = 'aggressive' OR friendliness = 'neutral' OR friendliness = 'passive' ),
 	PRIMARY KEY (creatureID)
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE CreaturesOwned (
@@ -185,7 +185,7 @@ CREATE TABLE Pets (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE NPCs (
@@ -194,11 +194,10 @@ CREATE TABLE NPCs (
 	class VARCHAR(255),
 	PRIMARY KEY (npcID),
 	FOREIGN KEY (npcID) REFERENCES Creatures(creatureID)
-
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.02 sec)
 
 --------------
 CREATE TABLE Summons (
@@ -221,7 +220,7 @@ CREATE TABLE Monsters (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE Skills (
@@ -231,7 +230,7 @@ CREATE TABLE Skills (
 )
 --------------
 
-Query OK, 0 rows affected (0.20 sec)
+Query OK, 0 rows affected (0.02 sec)
 
 --------------
 CREATE TABLE PlayerSkills (
@@ -242,10 +241,10 @@ CREATE TABLE PlayerSkills (
 )
 --------------
 
-Query OK, 0 rows affected (0.21 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
-CREATE TABLE  Items (
+CREATE TABLE Items (
 	itemID INT NOT NULL AUTO_INCREMENT,
 	itemName VARCHAR(255) NOT NULL,
 	weight INT,
@@ -254,10 +253,10 @@ CREATE TABLE  Items (
 )
 --------------
 
-Query OK, 0 rows affected (0.08 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
-CREATE TABLE Equiptment (
+CREATE TABLE Equipment (
 	itemID INT NOT NULL,
 	armorValue INT,
 	damageValue INT,
@@ -265,7 +264,7 @@ CREATE TABLE Equiptment (
 )
 --------------
 
-Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 --------------
 CREATE TABLE PlayerInventory (
@@ -277,11 +276,11 @@ CREATE TABLE PlayerInventory (
 )
 --------------
 
-Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.02 sec)
 
 --------------
 CREATE TABLE Recipes (
-	recipeID INT NOT NULL,
+	recipeID INT NOT NULL AUTO_INCREMENT,
 	craftedItemID INT NOT NULL,
 	quantityMade INT NOT NULL,
 	PRIMARY KEY (recipeID),
@@ -289,7 +288,7 @@ CREATE TABLE Recipes (
 )
 --------------
 
-Query OK, 0 rows affected (0.05 sec)
+Query OK, 0 rows affected (0.02 sec)
 
 --------------
 CREATE TABLE CraftingMaterials (
@@ -302,7 +301,7 @@ CREATE TABLE CraftingMaterials (
 )
 --------------
 
-Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.03 sec)
 
 Bye
 --------------
@@ -332,7 +331,7 @@ VALUES
     (6, '2016-10-09 11:23:05', '2017-02-12 13:52:57')
 --------------
 
-Query OK, 6 rows affected (0.02 sec)
+Query OK, 6 rows affected (0.00 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -346,7 +345,7 @@ VALUES
     ("The kingdom under the mountain", "The far reaches")
 --------------
 
-Query OK, 5 rows affected (0.02 sec)
+Query OK, 5 rows affected (0.01 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 --------------
@@ -387,7 +386,7 @@ VALUES
     ("suffocating", 50, -60, -60, -60)
 --------------
 
-Query OK, 6 rows affected (0.01 sec)
+Query OK, 6 rows affected (0.00 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -416,7 +415,7 @@ VALUES
     ("Choked on chicken bone", '2017-02-10 12:00:00')
 --------------
 
-Query OK, 6 rows affected (0.01 sec)
+Query OK, 6 rows affected (0.00 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -432,6 +431,230 @@ VALUES
 --------------
 
 Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Creatures
+    (species, maxHealth, friendliness)
+VALUES
+    ("dog", 150, "passive"),            
+    ("cat", 70, "neutral"),             
+    ("raven", 10, "aggressive"),        
+    ("mushroom", 250, "aggressive"),    
+    ("snake", 50, "passive"),           
+    ("rabbit", 1500, "aggressive"),     
+    ("whiptree", 700, "aggressive"),    
+    ("mouse", 20, "neutral"),           
+    ("gopher", 60, "passive"),          
+    ("human", 100, "neutral"),          
+    ("human", 120, "neutral"),          
+    ("human", 150, "aggressive"),       
+    ("orc", 200, "aggressive"),         
+    ("orc", 250, "passive"),            
+    ("elf", 90, "neutral"),             
+    ("dog", 150, "passive"),            
+    ("cat", 90, "neutral"),             
+    ("dog", 150, "aggressive"),         
+    ("dog", 150, "neutral"),            
+    ("cat", 110, "aggressive"),         
+    ("mushroom", 350, "aggressive"),    
+    ("mushroom", 150, "aggressive"),    
+    ("mushroom",  50, "aggressive"),    
+    ("mushroom",  75, "aggressive")
+--------------
+
+Query OK, 24 rows affected (0.00 sec)
+Records: 24  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO CreaturesOwned
+    (playerID, creatureID)
+VALUES
+    (6, 3),
+    (5, 4),
+    (4, 2),
+    (2, 1),
+    (2, 17),
+    (3, 18)
+--------------
+
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Pets
+    (petID, loyalty)
+VALUES
+    (2, "neutral"),
+    (4, "disloyal"),
+    (5, "loyal"),
+    (18, "loyal"),
+    (17, "disloyal"),
+    (1, "very_loyal")
+--------------
+
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO NPCs
+    (npcID, npcName, class)
+VALUES
+    (10, "Bob", "shopkeeper"),
+    (11, "Tim", "enchanter"),
+    (12, "Jim", "bandit"),
+    (13, "Ragh", "bandit"),
+    (14, "Uuururkru", "shopkeeper"),
+    (15, "Elderong", "archer")
+--------------
+
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Summons
+    (summonID, creatureName, duration)
+VALUES 
+    (3, "Flit", 30),
+    (8, "Mr. Useless", 10),
+    (9, "Digdug", 60),
+    (16, "Fido", 90),
+    (19, "Doggo", 90)
+--------------
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Monsters
+    (monsterID, attackValue)
+VALUES 
+    (6, 1000),
+    (7, 100),
+    (21, 63),
+    (22, 70),
+    (23, 10),
+    (24, 250)
+--------------
+
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Skills
+    (skillName, maxLevel)
+VALUES
+    ("forging", 100),
+    ("divining", 10),
+    ("diving", 7),
+    ("spell-making", 100),
+    ("hand-to-hand", 100),
+    ("archery", 100)
+--------------
+
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO PlayerSkills
+    (playerID, skillName, playerSkillLevel)
+VALUES
+    (1, "forging", 87),
+    (1, "hand-to-hand", 73),
+    (2, "divining", 9),
+    (2, "diving", 3),
+    (4, "archery", 65),
+    (4, "spell-making", 2),
+    (5, "forging", 56)
+--------------
+
+Query OK, 7 rows affected (0.00 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Items
+    (itemName, weight, cost)
+VALUES
+    ("broadsword", 3, 50),      
+    ("letter opener", 1, 10),   
+    ("hammer", 2, 40),          
+    ("big hammer", 5, 70),      
+    ("breastplate", 5, 30),     
+    ("wood planks", 1, 10),     
+    ("iron ingot", 1, 8),       
+    ("bronze ingot", 1, 10),    
+    ("leather", 1, 6),          
+    ("melange", 1, 500),        
+    ("fiber", 1, 2),            
+    ("helmet", 3, 50),          
+    ("iron ore", 1, 5),         
+    ("bronze ore", 1, 10),      
+    ("log", 30, 30),            
+    ("helmet", 3, 50)
+--------------
+
+Query OK, 16 rows affected (0.01 sec)
+Records: 16  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Equipment
+    (itemID, armorValue, damageValue)
+VALUES
+    (1, 0, 59),
+    (2, 0, 7),
+    (3, 0, 10),
+    (4, 0, 80),
+    (5, 100, 0),
+    (12, 80, 0)
+--------------
+
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO PlayerInventory
+    (playerID, itemID)
+VALUES 
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (1, 2),
+    (1, 4),
+    (4, 2),
+    (6, 11),
+    (6, 12)
+--------------
+
+Query OK, 8 rows affected (0.01 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO Recipes
+    (craftedItemID, quantityMade)
+VALUES
+    (1, 1),     
+    (7, 2),     
+    (8, 2),     
+    (6, 10),    
+    (16, 1)
+--------------
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+--------------
+INSERT INTO CraftingMaterials
+    (recipeID, craftingMaterialID)
+VALUES
+    (1, 7),
+    (1, 9),
+    (2, 13),
+    (3, 14),
+    (4, 15),
+    (5, 8)
+--------------
+
+Query OK, 6 rows affected (0.00 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 Bye

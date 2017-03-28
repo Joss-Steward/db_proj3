@@ -97,8 +97,8 @@ CREATE TABLE Creatures (
 	creatureID INT NOT NULL AUTO_INCREMENT,
 	species VARCHAR(255) NOT NULL,
 	maxHealth INT,
-	Friendliness VARCHAR(255),
-	CONSTRAINT Friend_Val CHECK  (Friendliness = 'aggressive' OR Friendliness = 'neutral' OR Friendliness = 'passive' ),
+	friendliness VARCHAR(255),
+	CONSTRAINT Friend_Val CHECK  (friendliness = 'aggressive' OR friendliness = 'neutral' OR friendliness = 'passive' ),
 	PRIMARY KEY (creatureID)
 );
 
@@ -123,7 +123,6 @@ CREATE TABLE NPCs (
 	class VARCHAR(255),
 	PRIMARY KEY (npcID),
 	FOREIGN KEY (npcID) REFERENCES Creatures(creatureID)
-
 );
 
 CREATE TABLE Summons (
@@ -155,7 +154,7 @@ CREATE TABLE PlayerSkills (
 );
 
 -- Added ItemName as a primary key though it is not in the original schema
-CREATE TABLE  Items (
+CREATE TABLE Items (
 	itemID INT NOT NULL AUTO_INCREMENT,
 	itemName VARCHAR(255) NOT NULL,
 	weight INT,
@@ -163,7 +162,7 @@ CREATE TABLE  Items (
 	CONSTRAINT PK_items PRIMARY KEY (itemID, itemName)
 );
 
-CREATE TABLE Equiptment (
+CREATE TABLE Equipment (
 	itemID INT NOT NULL,
 	armorValue INT,
 	damageValue INT,
@@ -179,7 +178,7 @@ CREATE TABLE PlayerInventory (
 );
 
 CREATE TABLE Recipes (
-	recipeID INT NOT NULL,
+	recipeID INT NOT NULL AUTO_INCREMENT,
 	craftedItemID INT NOT NULL,
 	quantityMade INT NOT NULL,
 	PRIMARY KEY (recipeID),
