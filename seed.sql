@@ -1,3 +1,7 @@
+-- Project 2, Part 1
+-- INSERT SCRIPT
+-- Joss Steward, Regginald Nettey, Jeff Titanich
+
 INSERT INTO Players 
     (playerName, class, experiencePoints, strength, charisma, intelligence, currentHealth, maxHealth) 
 VALUES 

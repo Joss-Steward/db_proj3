@@ -1,9 +1,12 @@
+-- Project 2, Part 1
+-- CREATE SCRIPT
+-- Joss Steward, Regginald Nettey, Jeff Titanich
+
 -- To use just do
 	-- mysql --host=db.cs.ship.edu --user=csc371-30 --password=Password30 --database=csc371-30 -vvv < MMO_CREATE.sql
 	-- remove -vvv if you don't want verbose
 
--- Drops all tables
--- Found this part on stackoverflow though im sure i could have come up with something similar given time
+-- Drops all tables - Found this part on stackoverflow though im sure i could have come up with something similar given time
 -- http://stackoverflow.com/questions/12403662/how-to-remove-all-mysql-tables-from-the-command-line-without-drop-database-permi
 -- Create a dummy table to drop in case of empty db
 
