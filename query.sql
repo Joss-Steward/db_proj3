@@ -82,5 +82,12 @@ SELECT craftingMaterialID AS neededMatID
      FROM PlayerInventory 
      WHERE craftingMaterialID = itemID AND playerID=6);
 
-
+-- Player who can take and deal the most damage
+SELECT P.name 
+ FROM (SELECT playerName AS name, SUM(strength + maxHealth) AS tot
+       FROM Players
+       GROUP BY playerName              
+       ) AS P
+ ORDER BY P.tot DESC
+ LIMIT 1;
  
