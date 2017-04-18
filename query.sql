@@ -87,7 +87,8 @@ SELECT craftingMaterialID AS neededMatID
  SELECT playerDMG.playerID 
  FROM (SELECT 
         Equipment.playerID, 
-        SUM(Equipment.combined) AS total 
+        SUM(Equipment.combined) AS total,
+        MAX(Equipment.combined) AS maxTotal
        FROM
         (SELECT 
          playerID, 
@@ -96,5 +97,5 @@ SELECT craftingMaterialID AS neededMatID
          NATURAL JOIN Equipment) AS Equipment 
        GROUP BY playerID
        ORDER BY total DESC) AS playerDMG
-LIMIT 1;
+WHERE total = maxTotal;
     
