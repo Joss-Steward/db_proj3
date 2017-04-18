@@ -84,18 +84,29 @@ SELECT craftingMaterialID AS neededMatID
 
 -- Player who can take and deal the most damag
  
- SELECT playerDMG.playerID 
+ SELECT playerDMG.playerID
  FROM (SELECT 
         Equipment.playerID, 
-        SUM(Equipment.combined) AS total,
-        MAX(Equipment.combined) AS maxTotal
+        SUM(Equipment.combined) AS total
        FROM
         (SELECT 
          playerID, 
          (armorValue + damageValue) AS combined 
          FROM PlayerInventory 
          NATURAL JOIN Equipment) AS Equipment 
-       GROUP BY playerID
-       ORDER BY total DESC) AS playerDMG
-WHERE total = maxTotal;
+       GROUP BY playerID) AS playerDMG
+INNER JOIN (SELECT MAX(playerDMG2.total) AS maxTotal
+           FROM
+            (SELECT 
+              Equipment.playerID, 
+              SUM(Equipment.combined) AS total
+             FROM
+              (SELECT 
+               playerID, 
+               (armorValue + damageValue) AS combined 
+               FROM PlayerInventory 
+               NATURAL JOIN Equipment) AS Equipment 
+             GROUP BY playerID) AS playerDMG2          
+           ) AS t
+WHERE playerDMG.total = t.maxTotal;
     
