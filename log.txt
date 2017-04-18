@@ -2,13 +2,13 @@
 SET FOREIGN_KEY_CHECKS = 0
 --------------
 
-Query OK, 0 rows affected (0.00 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 --------------
 SET @tables = NULL
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.05 sec)
 
 --------------
 SELECT GROUP_CONCAT(table_name) INTO @tables
@@ -16,38 +16,38 @@ SELECT GROUP_CONCAT(table_name) INTO @tables
   WHERE table_schema = 'csc371-30'
 --------------
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.03 sec)
 
 --------------
 SET @tables = CONCAT('DROP TABLE IF EXISTS ', @tables)
 --------------
 
-Query OK, 0 rows affected (0.00 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 --------------
 PREPARE stmt FROM @tables
 --------------
 
-Query OK, 0 rows affected (0.00 sec)
+Query OK, 0 rows affected (0.05 sec)
 Statement prepared
 
 --------------
 EXECUTE stmt
 --------------
 
-Query OK, 0 rows affected (0.06 sec)
+Query OK, 0 rows affected, 2 warnings (0.12 sec)
 
 --------------
 DEALLOCATE PREPARE stmt
 --------------
 
-Query OK, 0 rows affected (0.00 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 --------------
 SET FOREIGN_KEY_CHECKS = 1
 --------------
 
-Query OK, 0 rows affected (0.00 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 --------------
 CREATE TABLE Players (
@@ -64,7 +64,7 @@ CREATE TABLE Players (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.07 sec)
 
 --------------
 CREATE TABLE Logins (
@@ -77,7 +77,7 @@ CREATE TABLE Logins (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 --------------
 CREATE TABLE Maps (
@@ -87,7 +87,7 @@ CREATE TABLE Maps (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 --------------
 CREATE TABLE KnownMaps (
@@ -99,7 +99,7 @@ CREATE TABLE KnownMaps (
 )
 --------------
 
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.05 sec)
 
 --------------
 CREATE TABLE StatusEffects (
@@ -112,7 +112,7 @@ CREATE TABLE StatusEffects (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.05 sec)
 
 --------------
 CREATE TABLE PlayerStatus (
@@ -126,7 +126,7 @@ CREATE TABLE PlayerStatus (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.73 sec)
 
 --------------
 CREATE TABLE Deaths (
@@ -137,7 +137,7 @@ CREATE TABLE Deaths (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.07 sec)
 
 --------------
 CREATE TABLE PlayerDeaths (
@@ -149,7 +149,7 @@ CREATE TABLE PlayerDeaths (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 --------------
 CREATE TABLE Creatures (
@@ -162,7 +162,7 @@ CREATE TABLE Creatures (
 )
 --------------
 
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.07 sec)
 
 --------------
 CREATE TABLE CreaturesOwned (
@@ -174,7 +174,7 @@ CREATE TABLE CreaturesOwned (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.49 sec)
 
 --------------
 CREATE TABLE Pets (
@@ -185,7 +185,7 @@ CREATE TABLE Pets (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.10 sec)
 
 --------------
 CREATE TABLE NPCs (
@@ -197,7 +197,7 @@ CREATE TABLE NPCs (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.83 sec)
 
 --------------
 CREATE TABLE Summons (
@@ -209,7 +209,7 @@ CREATE TABLE Summons (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 --------------
 CREATE TABLE Monsters (
@@ -220,7 +220,7 @@ CREATE TABLE Monsters (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.07 sec)
 
 --------------
 CREATE TABLE Skills (
@@ -230,7 +230,7 @@ CREATE TABLE Skills (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 --------------
 CREATE TABLE PlayerSkills (
@@ -241,7 +241,7 @@ CREATE TABLE PlayerSkills (
 )
 --------------
 
-Query OK, 0 rows affected (0.00 sec)
+Query OK, 0 rows affected (0.07 sec)
 
 --------------
 CREATE TABLE Items (
@@ -253,7 +253,7 @@ CREATE TABLE Items (
 )
 --------------
 
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.05 sec)
 
 --------------
 CREATE TABLE Equipment (
@@ -264,7 +264,7 @@ CREATE TABLE Equipment (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 --------------
 CREATE TABLE PlayerInventory (
@@ -276,7 +276,7 @@ CREATE TABLE PlayerInventory (
 )
 --------------
 
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 --------------
 CREATE TABLE Recipes (
@@ -288,7 +288,7 @@ CREATE TABLE Recipes (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 --------------
 CREATE TABLE CraftingMaterials (
@@ -302,7 +302,7 @@ CREATE TABLE CraftingMaterials (
 )
 --------------
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.11 sec)
 
 Bye
 --------------
@@ -317,7 +317,7 @@ VALUES
     ("Uuuuurk", "orc berserker",        FLOOR(RAND() * 250), FLOOR(RAND() * 300), FLOOR(RAND() * 100), FLOOR(RAND() * 190), FLOOR(RAND() * 100), 650)
 --------------
 
-Query OK, 6 rows affected (0.01 sec)
+Query OK, 6 rows affected (0.06 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -326,14 +326,16 @@ INSERT INTO Logins
 VALUES
     (1, '2017-01-29 11:23:05', '2017-02-01 13:52:57'),
     (2, '2016-11-25 11:23:05', '2017-02-10 13:52:57'),
+    (2, '2016-11-25 11:23:05', '2016-11-25 11:53:05'),
     (3, '2017-01-12 11:23:05', '2017-02-07 13:52:57'),
     (4, '2017-01-17 11:23:05', '2017-02-09 13:52:57'),
     (5, '2017-02-05 11:23:05', '2017-02-23 13:52:57'),
-    (6, '2016-10-09 11:23:05', '2017-02-12 13:52:57')
+    (6, '2016-10-09 11:23:05', '2016-10-09 11:52:57'),
+    (6, '2016-10-11 11:23:05', '2016-10-11 12:02:57')
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
-Records: 6  Duplicates: 0  Warnings: 0
+Query OK, 8 rows affected (0.04 sec)
+Records: 8  Duplicates: 0  Warnings: 0
 
 --------------
 INSERT INTO Maps
@@ -346,7 +348,7 @@ VALUES
     ("The kingdom under the mountain", "The far reaches")
 --------------
 
-Query OK, 5 rows affected (0.00 sec)
+Query OK, 5 rows affected (0.06 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 --------------
@@ -372,7 +374,7 @@ VALUES
     (6, "The kingdom under the mountain")
 --------------
 
-Query OK, 17 rows affected (0.00 sec)
+Query OK, 17 rows affected (0.04 sec)
 Records: 17  Duplicates: 0  Warnings: 0
 
 --------------
@@ -387,7 +389,7 @@ VALUES
     ("suffocating", 50, -60, -60, -60)
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.04 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -401,7 +403,7 @@ VALUES
     (5, "frostbite", NOW(), "Freezing")
 --------------
 
-Query OK, 5 rows affected (0.00 sec)
+Query OK, 5 rows affected (0.04 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 --------------
@@ -416,7 +418,7 @@ VALUES
     ("Choked on chicken bone", '2017-02-10 12:00:00')
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.05 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -431,7 +433,7 @@ VALUES
     (2, 6)
 --------------
 
-Query OK, 6 rows affected (0.01 sec)
+Query OK, 6 rows affected (0.03 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -464,7 +466,7 @@ VALUES
     ("mushroom",  75, "aggressive")
 --------------
 
-Query OK, 24 rows affected (0.00 sec)
+Query OK, 24 rows affected (0.05 sec)
 Records: 24  Duplicates: 0  Warnings: 0
 
 --------------
@@ -476,11 +478,18 @@ VALUES
     (4, 2),
     (2, 1),
     (2, 17),
-    (3, 18)
+    (3, 18),
+    (2, 3),
+    (4, 4),
+    (5, 3),
+    (3, 8),
+    (2, 8),
+    (4, 16),
+    (5, 19)
 --------------
 
-Query OK, 6 rows affected (0.01 sec)
-Records: 6  Duplicates: 0  Warnings: 0
+Query OK, 13 rows affected (0.04 sec)
+Records: 13  Duplicates: 0  Warnings: 0
 
 --------------
 INSERT INTO Pets
@@ -494,7 +503,7 @@ VALUES
     (1, "very_loyal")
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.04 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -509,7 +518,7 @@ VALUES
     (15, "Elderong", "archer")
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.04 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -523,7 +532,7 @@ VALUES
     (19, "Doggo", 90)
 --------------
 
-Query OK, 5 rows affected (0.03 sec)
+Query OK, 5 rows affected (0.04 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 --------------
@@ -538,7 +547,7 @@ VALUES
     (24, 250)
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.05 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -553,7 +562,7 @@ VALUES
     ("archery", 100)
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.04 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -562,15 +571,17 @@ INSERT INTO PlayerSkills
 VALUES
     (1, "forging", 87),
     (1, "hand-to-hand", 73),
-    (2, "divining", 9),
-    (2, "diving", 3),
-    (4, "archery", 65),
+    (1, "divining", 10),
+    (1, "diving", 7),
+    (2, "archery", 100),
+    (2, "diving", 7),
+    (4, "archery", 100),
     (4, "spell-making", 2),
     (5, "forging", 56)
 --------------
 
-Query OK, 7 rows affected (0.01 sec)
-Records: 7  Duplicates: 0  Warnings: 0
+Query OK, 9 rows affected (0.04 sec)
+Records: 9  Duplicates: 0  Warnings: 0
 
 --------------
 INSERT INTO Items
@@ -594,7 +605,7 @@ VALUES
     ("helmet", 3, 50)
 --------------
 
-Query OK, 16 rows affected (0.01 sec)
+Query OK, 16 rows affected (0.04 sec)
 Records: 16  Duplicates: 0  Warnings: 0
 
 --------------
@@ -609,7 +620,7 @@ VALUES
     (12, 80, 0)
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.04 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 --------------
@@ -622,11 +633,11 @@ VALUES
     (1, 2),
     (1, 4),
     (4, 2),
-    (6, 11),
+    (6, 7),
     (6, 12)
 --------------
 
-Query OK, 8 rows affected (0.00 sec)
+Query OK, 8 rows affected (0.04 sec)
 Records: 8  Duplicates: 0  Warnings: 0
 
 --------------
@@ -640,7 +651,7 @@ VALUES
     (16, 1)
 --------------
 
-Query OK, 5 rows affected (0.01 sec)
+Query OK, 5 rows affected (0.04 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 --------------
@@ -655,7 +666,7 @@ VALUES
     (5, 3, 8)
 --------------
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.04 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 Bye
